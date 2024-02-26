@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saque bancário</title>
+</head>
+<body>
+<form>
+    <p> Saldo: <input type="text" id="saldo" readonly placeholder="Saída" value="3200"></p>
+    <p> Saque: <input type="number" id="saque"  "> </p>
+
+    <button type="button" onclick="fazersaque()"> Realizar Saque</button>
+    
+</form>
+  <script>
+          function fazersaque() {
+            alert("ok");
+            let saque = parseFloat (document.getElementById("saque").value);
+            let saldo = parseFloat (document.getElementById("saldo").value);
+            if (saque <= saldo){
+              let operator = parseFloat(saldo) - parseFloat(saque);
+              document.getElementById("saldo").value = operator;
+            } else{
+              alert("OPERAÇÂO NÃO PERMITIDA. valor de saque maior que saldo.");
+            }
+          }
+  </script>
+</body>
+</html>
